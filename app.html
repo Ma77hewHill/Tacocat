@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>Abax: A Coding Project By Matthew Hill</title>
+    <title>Tacocat: A Coding Project By Matthew Hill</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,7 +20,7 @@
 <!--NAV SECTION-->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="img/mhPC.svg" class="d-inline-block align-text-top" width="30" height="24"><img> Abax 100</a>
+        <a class="navbar-brand" href="#"><img src="img/TacocatNav.svg" class="d-inline-block align-text-top" width="30" height=""><img> Tacocat</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -48,7 +48,38 @@
 </nav>
 <!--MAIN SECTION-->
 <main class="flex-shrink-0">
-    <div class="container"></div>
+    <div class="container">
+        <div class="container mt-5">
+            <div class="row row-cols-1 row-cols-md-2">
+                <div class="col">
+                    <h1 class="display-5 fw-bold lh-1 mb-3">
+                        Taco Cat: A Coding Project 
+                    </h1>
+                    <h4 class="lead mb-2">
+                        Taco Cat is a palindrome. A palindrome is a word, phrase, or sequence that reads the same backward as forward. Write a program that checks if the phrase entered is a palindrome.
+                    </h4>
+                </div>
+                <div class="col">
+                    <h5 class="border-1 border-bottom">Enter a phrase or word to check</h5>
+                    <form class="row gx-3 gy-2">
+                        <div class="col">
+                            <input id="userString" type="text" class="form-control" placeholder="Enter a Phrase or word" aria-label="Enter a phrase or word">
+                        </div>
+                        <div class="col-12">
+                            <!--to work with JS, button type must be button -->
+                            <button type="button" id="btnSubmit" class="btn btn-dark">Check it!</button>
+                        </div>
+                        <div class="alert alert-warning mt-5 invisible fade show" id="alert" role="alert">
+                            <h4 id="alertHeader" class="alert-headnig" >Well Done!</h4>
+                            <hr>
+                            <p class="mb-0" id="msg">
+                                <!--Insert a message here-->
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </div>
 </main>
 <!--footer-->
 <footer class="footer mt-auto py-3 sticky-footer">
@@ -58,7 +89,7 @@
             <div><span class="text-mute">&copy;2023</span> Matthew Hill | matthewhill93@outlook.com</div>
         </div>
         <div class="col d-flex align-items-center justify-content-start justify-content-md-center">
-            <img src="/img/mhBgTrans.svg" alt="Matthew Hill Logo" height="24"> <!--Insert Logo once it has been created-->
+            <img src="/img/FooterLogo.svg" alt="Matthew Hill Logo" height="18"> <!--Insert Logo once it has been created-->
         </div>
         <div class="col d-flex align-items-center justify-content-start justify-content-md-end">
             <div class="row">
@@ -80,5 +111,8 @@
   integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
 </script>
 <script src="/js/site.js"></script>
+<script>
+    document.getElementById("btnSubmit").addEventListener("click", getValue);
+</script>
 </body>
 </html>
