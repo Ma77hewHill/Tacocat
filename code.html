@@ -54,16 +54,62 @@
         <div class="row row-cols-1 row-cols-md-2">
             <div class="col-md-8">
                 <pre class="line-numbers"><code class="language-javascript">
-                    //Call Hello World 
-                        function HelloWorld(){
-                        alert("Hello World");
+                    //get our user input
+                    function getValue(){
+                        //make sure the alert is invisible 
+                        document.getElementById("alert").classList.remove("invisible");
+                        //get user string from the page 
+                        let userString = document.getElementById("userString").value;
+                    
+                        //check for a palindrome 
+                        let returnObj = checkForPaindrome(userString);
+                    
+                        //display our message 
+                        displayMessage(returnObj);
+                    }
+                    
+                    //check for a palindrome 
+                    function checkForPaindrome(userString){
+                        //convert to lowercase 
+                        userString = userString.toLowerCase();
+                        //remove spaces and special characters
+                        let regex = /[^a-z0-9]/gi;
+                        userString = userString.replace(regex, "");
+                    
+                        let revString = [];
+                        let returnObj = {};
+                    
+                        for (let index = userString.length - 1; index >= 0; index--) {
+                            revString += userString[index];
+                            }
+                            if (revString == userString) {
+                                returnObj.msg = "Well done! You entered a palindrome!"
+                            }
+                            else{
+                                returnObj.msg = "Sorry, this is not a palindrome!"
+                            }
+                    
+                            returnObj.reversed = revString;
+                    
+                            return returnObj;
+                    }
+                    
+                    //display a message to the string
+                    function displayMessage(returnObj){
+                    
+                        document.getElementById("alertHeader").innerHTML = returnObj.msg;
+                        document.getElementById("msg").innerHTML = `Your phrase reversed is: ${returnObj.reversed} `;
+                        document.getElementById("alert").classList.remove("invisible");
                     }
                 </code></pre>
             </div>
             <div class="col-md-4">
-                <p>The Code is structured in one function.</p>
-                <h5>Hello World</h5>
-                <p>Hello World is a function that displays an alert with a message of "Hello World"</p>
+                <h5>Taco Cat</h5>
+                <p>Taco Cat is a palindrome. A palindrome is a word, phrase, or sequence that reads the same backward as forward. Write a program that checks if the phrase entered is a palindrome.</p>
+                <h5>How does it work?</h5>
+                <p>First, there is a function to get the value from the user. This function is called <strong>getValue()</strong></p>
+                <p>The next function is called <strong>checkForPalindrome</strong> In this function, we start by converting the users input to lowercase. Then, spaces and special characters are removed. Next, a for loop is used in conjunction with a if else statement. Within this, revString and userString are compared, and an appropriate message is displayed to the user.</p>
+                <p>Finally, the <strong>displayMessage</strong> function is used to display a message to the user!</p>
             </div>
         </div>
     </div>
